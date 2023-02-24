@@ -34,8 +34,18 @@ namespace APIShortLink.Controllers
             }
             return Ok();
         }
-
+        /// <summary>
+        /// Cadastrar um novo link
+        /// </summary>
+        /// <remarks>
+        /// { "Title":"ultimo-artigo blog","destinationLink": "https://www.youtube.com/watch?v=tE3pFW54sFw"}
+        /// </remarks>
+        /// <param name="model">Dados de Link</param>
+        /// <returns>Objeto recém criado</returns>
+        /// <response code="201">Sucesso</response>
         [HttpPost]
+        //Anotação de retorno
+        [ProducesResponseType(StatusCodes.Status201Created)]
         public IActionResult Post
         (AddOrUpdateShortenedLinkModel model)
         {
